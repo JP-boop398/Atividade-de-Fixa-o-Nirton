@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+
+    printf("--- Raiz Quadrada por Somas de Impares ---\n");
+
+    while (1) {
+        printf("\nDigite um numero quadrado perfeito (ou 0 para encerrar): ");
+        scanf("%d", &N);
+
+        // Condição de parada: encerra se N for zero
+        if (N == 0) {
+            break;
+        }
+
+        // Caso o usuário digite um número negativo, o programa avisa e pede outro
+        if (N < 0) {
+            printf("Por favor, digite apenas numeros positivos.\n");
+            continue;
+        }
+
+        int soma = 0;
+        int impar = 1;
+        int M = 0; // Contador de termos (raiz quadrada)
+
+        // Soma os números ímpares consecutivos até atingir ou ultrapassar N
+        while (soma < N) {
+            soma += impar;
+            impar += 2; // Próximo número ímpar
+            M++;        // Conta mais um termo somado
+        }
+
+        // Verifica se o número digitado realmente era um quadrado perfeito
+        if (soma == N) {
+            printf("A raiz quadrada de %d e %d (%d termos somados).\n", N, M, M);
+        } else {
+            printf("O numero %d nao e um quadrado perfeito.\n", N);
+        }
+    }
+
+    printf("\nPrograma encerrado.\n");
+    return 0;
+}

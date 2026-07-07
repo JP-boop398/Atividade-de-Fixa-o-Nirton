@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+    float raio, comprimento;
+    const float PI = 3.141592;
+
+    printf("--- Calculo do Comprimento do Circulo ---\n\n");
+
+    printf("Digite o valor do raio do circulo: ");
+    scanf("%f", &raio);
+
+    comprimento = 2 * PI * raio;
+
+    printf("\n--- RESULTADO ---\n");
+    printf("O comprimento do circulo e: %.4f\n", comprimento);
+
+    return 0;
+}

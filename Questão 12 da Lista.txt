@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int numero;
+
+    // Leitura do número
+    printf("Digite um numero inteiro: ");
+    scanf("%d", &numero);
+
+    // Verifica se o número é par
+    if (numero % 2 == 0) {
+        printf("\nOs proximos 10 numeros pares seguintes sao:\n");
+        
+        // Loop para calcular e mostrar os próximos 10 pares
+        for (int i = 1; i <= 10; i++) {
+            // O próximo par será o número original + (2 * i)
+            printf("%d ", numero + (2 * i));
+        }
+        printf("\n");
+    } else {
+        printf("\nO numero digitado nao e par.\n");
+    }
+
+    return 0;
+}

@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+int main() {
+    int vezes;
+    
+    int faixa_menos_10 = 0;
+    int faixa_10_a_15 = 0;
+    int faixa_mais_15 = 0;
+    int total_alunos = 0;
+
+    printf("--- Pesquisa: Restaurante Universitario ---\n\n");
+
+    while (1) {
+        printf("Digite o numero de vezes que utilizou o restaurante (ou negativo para sair): ");
+        scanf("%d", &vezes);
+
+        if (vezes < 0) {
+            break;
+        }
+
+        total_alunos++;
+
+        // Classificação nas faixas do enunciado
+        if (vezes < 10) {
+            faixa_menos_10++;
+        } else if (vezes <= 15) { // Entre 10 e 15 vezes (inclusive)
+            faixa_10_a_15++;
+        } else { // Acima de 15 vezes
+            faixa_mais_15++;
+        }
+    }
+
+    if (total_alunos > 0) {
+        // Cálculo dos percentuais com conversão explícita para float
+        float perc_menos_10 = ((float)faixa_menos_10 / total_alunos) * 100.0;
+        float perc_10_a_15  = ((float)faixa_10_a_15 / total_alunos) * 100.0;
+        float perc_mais_15  = ((float)faixa_mais_15 / total_alunos) * 100.0;
+
+        printf("\n--- RESULTADOS DA PESQUISA ---\n");
+        printf("a) Percentual de uso < 10 vezes: %.2f%%\n", perc_menos_10);
+        printf("b) Percentual de uso entre 10 e 15 vezes: %.2f%%\n", perc_10_a_15);
+        printf("c) Percentual de uso > 15 vezes: %.2f%%\n", perc_mais_15);
+        printf("d) Numero total de alunos entrevistados: %d\n", total_alunos);
+    } else {
+        printf("\nNenhum dado valido foi inserido.\n");
+    }
+
+    return 0;
+}

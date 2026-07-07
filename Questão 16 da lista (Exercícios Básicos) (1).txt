@@ -1,0 +1,22 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+void main()
+{
+    int id1, id2, id3;
+    double media;
+    
+    printf("Digite a idade do primeiro indivíduo: ");
+    scanf("%d", &id1);
+    printf("Digite agora a idade do segundo indivíduo: ");
+    scanf("%d", &id2);
+    printf("Digite agora a idade do terceiro indivíduo: ");
+    scanf("%d", &id3);
+    
+    media = (id1 + id2 + id3)/3;
+    
+    printf("A média da idade dos três indivíduos é: %.2lf \n",media);
+    
+}

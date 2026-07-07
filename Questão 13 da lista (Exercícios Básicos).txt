@@ -1,0 +1,20 @@
+
+#include <stdio.h>
+
+int main()
+{
+    int num, s1, s2, s3, s4, s5;
+    
+    printf("Digite um número: ");
+    scanf("%d", &num);
+    
+    s1 = num + 1;
+    s2 = num + 2;
+    s3 = num + 3;
+    s4 = num + 4;
+    s5 = num + 5;
+    
+    printf("Os cinco sucessores do número %d são: %d, %d, %d, %d e %d", num, s1, s2, s3, s4, s5);
+    
+    return 0;
+}

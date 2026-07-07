@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    int anos, cigarros_por_dia;
+    float preco_carteira, total_gasto;
+    
+    const int CIGARROS_POR_CARTEIRA = 20; 
+
+    printf("--- Calculo de Gastos de um Fumante ---\n\n");
+
+    printf("Digite ha quantos anos voce fuma: ");
+    scanf("%d", &anos);
+
+    printf("Digite quantos cigarros fuma por dia: ");
+    scanf("%d", &cigarros_por_dia);
+
+    printf("Digite o preco de uma carteira de cigarros (R$): ");
+    scanf("%f", &preco_carteira);
+
+    int total_dias = anos * 365;
+    int total_cigarros = total_dias * cigarros_por_dia;
+    
+
+    float total_carteiras = (float)total_cigarros / CIGARROS_POR_CARTEIRA;
+    
+    total_gasto = total_carteiras * preco_carteira;
+
+    printf("\n--- RESULTADO ---\n");
+    printf("Em %d anos, voce fumou aproximadamente %d cigarros.\n", anos, total_cigarros);
+    printf("O valor total gasto ate agora foi de: R$ %.2f\n", total_gasto);
+
+    return 0;
+}

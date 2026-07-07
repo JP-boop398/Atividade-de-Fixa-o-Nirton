@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <math.h> // Incluída para usar a função ceil()
+
+int main() {
+    float potencia_lampada, largura, comprimento;
+    float area, potencia_total;
+    int qtd_lampadas;
+
+    printf("--- Calculo de Iluminacao do Comodo ---\n\n");
+
+    printf("Digite a potencia da lampada que vai usar (em Watts): ");
+    scanf("%f", &potencia_lampada);
+
+    printf("Digite a largura do comodo (em metros): ");
+    scanf("%f", &largura);
+
+    printf("Digite o comprimento do comodo (em metros): ");
+    scanf("%f", &comprimento);
+
+    area = largura * comprimento;
+    potencia_total = area * 18.0; // 18W por metro quadrado
+    
+    qtd_lampadas = (int) ceil(potencia_total / potencia_lampada);
+
+    printf("\n--- RESULTADO ---\n");
+    printf("Area do comodo: %.2f m²\n", area);
+    printf("Potencia total necessaria: %.2f Watts\n", potencia_total);
+    printf("Quantidade de lampadas necessarias: %d\n", qtd_lampadas);
+
+    return 0;
+}

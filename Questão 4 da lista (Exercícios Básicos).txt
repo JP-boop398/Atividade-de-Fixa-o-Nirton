@@ -1,0 +1,17 @@
+
+#include <stdio.h>
+
+int main()
+{
+    int num1, num2, produto;
+    
+    printf("Digite um número: ");
+    scanf("%d", &num1);
+    printf("Digite agora outro número: ");
+    scanf("%d", &num2);
+    
+    produto = num1 * num2;
+    printf("A multiplicação dos números que você digitou é %d", produto);
+
+    return 0;
+}

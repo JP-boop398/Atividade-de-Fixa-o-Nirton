@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    float raio, altura, volume;
+    const float PI = 3.141592;
+
+    printf("--- Calculo do Volume do Cilindro ---\n\n");
+
+    printf("Digite o valor do raio da base: ");
+    scanf("%f", &raio);
+
+    printf("Digite o valor da altura do cilindro: ");
+    scanf("%f", &altura);
+
+    // Aplicação da fórmula matemática: PI * r² * h
+    volume = PI * (raio * raio) * altura;
+
+    printf("\n--- RESULTADO ---\n");
+    printf("O volume do cilindro e: %.4f\n", volume);
+
+    return 0;
+}

@@ -1,0 +1,79 @@
+#include <stdio.h>
+
+int main() {
+    int dias;
+    const float VALOR_DIARIA = 150.00;
+
+    // Variáveis para as estatísticas
+    int hospedes_mais_20_dias = 0;
+    int total_hospedes = 0;
+    float soma_contas_pagas = 0.0;
+    int soma_total_dias = 0;
+    float maior_conta = -1.0;
+
+    printf("--- Sistema de Gerenciamento de Hotel ---\n\n");
+
+    while (1) {
+        printf("Digite a quantidade de dias de permanencia (ou 0 para sair): ");
+        scanf("%d", &dias);
+
+        // Condição de parada
+        if (dias == 0) {
+            break;
+        }
+
+        // Ignora valores inválidos (negativos)
+        if (dias < 0) {
+            printf("Quantidade invalida. Digite um numero positivo.\n\n");
+            continue;
+        }
+
+        total_hospedes++;
+        soma_total_dias += dias;
+
+        // Determina o percentual de desconto
+        float percentual_desconto = 0.0;
+        if (dias <= 5) {
+            percentual_desconto = 0.05;  // 5%
+        } else if (dias <= 10) {
+            percentual_desconto = 0.10;  // 10%
+        } else {
+            percentual_desconto = 0.15;  // 15%
+        }
+
+        // Cálculos dos valores do hóspede atual
+        float valor_bruto = dias * VALOR_DIARIA;
+        float valor_desconto = valor_bruto * percentual_desconto;
+        float valor_pago = valor_bruto - valor_desconto;
+
+        // b) Imprime o valor a pagar por cada hóspede imediatamente
+        printf("-> Valor bruto: R$ %.2f | Desconto: R$ %.2f | A PAGAR: R$ %.2f\n\n", 
+               valor_bruto, valor_desconto, valor_pago);
+
+        // a) Contagem de hóspedes com mais de 20 dias
+        if (dias > 20) {
+            hospedes_mais_20_dias++;
+        }
+
+        // c) Acumula o valor pago para calcular a média depois
+        soma_contas_pagas += valor_pago;
+
+        // e) Verifica a maior conta paga
+        if (valor_pago > maior_conta) {
+            maior_conta = valor_pago;
+        }
+    }
+
+    // Exibição do relatório final (apenas se houver hóspedes)
+    if (total_hospedes > 0) {
+        printf("--- RELATORIO FINAL ---\n");
+        printf("a) Hospedes que ficaram mais de 20 dias: %d\n", hospedes_mais_20_dias);
+        printf("c) Media do valor das contas pagas: R$ %.2f\n", soma_contas_pagas / total_hospedes);
+        printf("d) Media de dias de permanencia: %.1f dias\n", (float)soma_total_dias / total_hospedes);
+        printf("e) Valor da maior conta paga: R$ %.2f\n", maior_conta);
+    } else {
+        printf("\nNenhum hospede foi registrado.\n");
+    }
+
+    return 0;
+}

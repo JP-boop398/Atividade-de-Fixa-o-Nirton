@@ -1,0 +1,71 @@
+#include <stdio.h>
+
+int main() {
+    float altura;
+    int sexo;
+
+    // Variáveis acumuladoras e contadoras
+    float soma_altura_mulheres = 0.0;
+    float soma_altura_populacao = 0.0;
+    int total_homens = 0;
+    int total_mulheres = 0;
+    int mulheres_abaixo_165 = 0;
+
+    printf("--- Pesquisa de Habitantes (50 pessoas) ---\n\n");
+
+    // O laço executa exatamente 50 vezes
+    for (int i = 1; i <= 50; i++) {
+        printf("Pessoa %d/50 - Digite a altura: ", i);
+        scanf("%f", &altura);
+
+        printf("Pessoa %d/50 - Digite o sexo (0=masc, 1=fem): ", i);
+        scanf("%d", &sexo);
+        printf("\n");
+
+        // Acumula a altura para a média da população geral
+        soma_altura_populacao += altura;
+
+        // Classificação por sexo
+        if (sexo == 0) {
+            total_homens++;
+        } else if (sexo == 1) {
+            total_mulheres++;
+            soma_altura_mulheres += altura;
+
+            // d) Verifica se a mulher está abaixo de 1.65m
+            if (altura < 1.65) {
+                mulheres_abaixo_165++;
+            }
+        }
+    }
+
+    // Exibição dos resultados estatísticos
+    printf("--- RESULTADOS DA PESQUISA ---\n");
+
+    // a) Média de altura das mulheres
+    if (total_mulheres > 0) {
+        printf("a) Media de altura das mulheres: %.2fm\n", soma_altura_mulheres / total_mulheres);
+    } else {
+        printf("a) Media de altura das mulheres: Nenhuma mulher cadastrada.\n");
+    }
+
+    // b) Média de altura da população geral (sempre divide por 50)
+    printf("b) Media de altura da populacao: %.2fm\n", soma_altura_populacao / 50.0);
+
+    // c) Percentual de homens na população
+    float percentual_homens = ((float)total_homens / 50.0) * 100.0;
+    printf("c) Percentual de homens na populacao: %.2f%%\n", percentual_homens);
+
+    // d) Quantidade de mulheres
+    printf("d) Quantidade de mulheres: %d\n", total_mulheres);
+
+    // e) Percentual das mulheres abaixo de 1.65m (em relação ao total de MULHERES)
+    if (total_mulheres > 0) {
+        float percentual_mulheres_baixas = ((float)mulheres_abaixo_165 / total_mulheres) * 100.0;
+        printf("e) Percentual das mulheres abaixo de 1.65m: %.2f%%\n", percentual_mulheres_baixas);
+    } else {
+        printf("e) Percentual das mulheres abaixo de 1.65m: 0.00%% (sem mulheres).\n");
+    }
+
+    return 0;
+}

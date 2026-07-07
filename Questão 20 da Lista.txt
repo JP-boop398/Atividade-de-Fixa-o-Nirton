@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+    int numero;
+    int pares = 0;
+    int impares = 0;
+
+    printf("--- Contador de Pares e Impares (10 numeros) ---\n\n");
+
+    // Loop para ler exatamente 10 números inteiros
+    for (int i = 1; i <= 10; i++) {
+        printf("Digite o %dº numero inteiro: ", i);
+        scanf("%d", &numero);
+
+        // Se o resto da divisão por 2 for 0, o número é par
+        if (numero % 2 == 0) {
+            pares++;
+        } else {
+            impares++;
+        }
+    }
+
+    // Exibição dos totais acumulados
+    printf("\n--- RESULTADO FINAL ---\n");
+    printf("Quantidade de numeros pares: %d\n", pares);
+    printf("Quantidade de numeros impares: %d\n", impares);
+
+    return 0;
+}

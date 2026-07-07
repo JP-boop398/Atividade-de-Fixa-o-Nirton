@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int anos, meses, dias;
+    int total_dias;
+
+    printf("--- Conversor de Idade para Dias ---\n\n");
+
+    printf("Digite a idade dividida em partes.\n");
+    printf("Quantos anos completos: ");
+    scanf("%d", &anos);
+
+    printf("Quantos meses desde o ultimo aniversario: ");
+    scanf("%d", &meses);
+
+    printf("Quantos dias desde o ultimo mes: ");
+    scanf("%d", &dias);
+
+    total_dias = (anos * 365) + (meses * 30) + dias;
+
+    printf("\n--- RESULTADO ---\n");
+    printf("A idade expressa apenas em dias e: %d dias\n", total_dias);
+
+    return 0;
+}

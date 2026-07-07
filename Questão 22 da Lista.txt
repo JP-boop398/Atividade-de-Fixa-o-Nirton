@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int num;
+    int continuar = 1; // Inicializa com 1 para entrar no laço
+
+    // O laço executa enquanto a variável continuar for igual a 1 (SIM)
+    while (continuar == 1) {
+        printf("\nDigite um numero para ver sua tabuada: ");
+        scanf("%d", &num);
+
+        printf("\n--- Tabuada de %d ---\n", num);
+        // Gera a tabuada de 1 a 10 no formato solicitado
+        for (int i = 1; i <= 10; i++) {
+            printf("%d * %d = %d\n", num, i, num * i);
+        }
+
+        // Pergunta ao usuário se ele deseja repetir o processo
+        printf("\nDeseja continuar? (1-SIM ou 0-NAO): ");
+        scanf("%d", &continuar);
+    }
+
+    printf("\nPrograma encerrado. Ate logo!\n");
+    return 0;
+}

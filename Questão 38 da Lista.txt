@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    char nome[100];
+    int horas_trabalhadas;
+    int numero_dependentes;
+
+    printf("--- Calculo de Salario Liquido ---\n\n");
+
+    printf("Digite o NOME do funcionario: ");
+    // Lê o nome completo incluindo espaços
+    scanf(" %[^\n]s", nome); 
+
+    printf("Digite o NUMERO DE HORAS que ele trabalha: ");
+    scanf("%d", &horas_trabalhadas);
+
+    printf("Digite o NUMERO DE DEPENDENTES: ");
+    scanf("%d", &numero_dependentes);
+
+    float salario_trabalho = horas_trabalhadas * 3.00;
+    float bonus_dependentes = numero_dependentes * 100.00;
+    
+    float desconto = salario_trabalho * 0.135; 
+    
+    float salario_liquido = (salario_trabalho - desconto) + bonus_dependentes;
+
+    printf("\n--- COMPROVANTE DE PAGAMENTO ---\n");
+    printf("Funcionario: %s\n", nome);
+    printf("Salario pelo trabalho: R$ %.2f\n", salario_trabalho);
+    printf("Desconto de previdencia (13,5%%): R$ %.2f\n", desconto);
+    printf("Acrescimo por dependentes: R$ %.2f\n", bonus_dependentes);
+    printf("--------------------------------\n");
+    printf("SALARIO LIQUIDO: R$ %.2f\n", salario_liquido);
+
+    return 0;
+}

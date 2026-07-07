@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+int main() {
+    int idade, acidente;
+    float salario_bruto, salario_liquido;
+
+    int soma_idade_acidentados = 0;
+    int total_acidentados = 0;
+    float total_salarios_liquidos = 0.0;
+
+    printf("--- Pesquisa de Condicoes de Trabalho ---\n\n");
+
+    while (1) {
+        printf("Digite o salario bruto (ou valor negativo para encerrar): ");
+        scanf("%f", &salario_bruto);
+
+        if (salario_bruto < 0) {
+            break;
+        }
+
+        printf("Digite a idade: ");
+        scanf("%d", &idade);
+
+        printf("Ja teve algum acidente de trabalho? (1-Sim / 0-Nao): ");
+        scanf("%d", &acidente);
+        printf("\n");
+
+        if (salario_bruto > 1500.00) {
+            salario_liquido = salario_bruto - (salario_bruto * 0.10); // Desconto de 10%
+        } else {
+            salario_liquido = salario_bruto; // Sem desconto
+        }
+
+        total_salarios_liquidos += salario_liquido;
+
+        if (acidente == 1) {
+            soma_idade_acidentados += idade;
+            total_acidentados++;
+        }
+    }
+
+    printf("--- RELATORIO FINAL DA PESQUISA ---\n");
+
+    if (total_acidentados > 0) {
+        float media_idade = (float)soma_idade_acidentados / total_acidentados;
+        printf("a) Media de idade das pessoas que sofreram acidente: %.1f anos\n", media_idade);
+    } else {
+        printf("a) Media de idade das pessoas que sofreram acidente: Ninguem sofreu acidente.\n");
+    }
+
+    printf("b) Total de salarios liquidos pagos pela empresa: R$ %.2f\n", total_salarios_liquidos);
+
+    return 0;
+}

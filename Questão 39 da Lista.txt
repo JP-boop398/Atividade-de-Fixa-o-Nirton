@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    float custo_fabrica, percentual_distribuidor, impostos, custo_consumidor;
+
+    printf("--- Calculo do Custo de um Carro Novo ---\n\n");
+
+    printf("Digite o custo de fabrica do carro (R$): ");
+    scanf("%f", &custo_fabrica);
+
+    percentual_distribuidor = custo_fabrica * 0.28; // 28% do distribuidor
+    impostos = custo_fabrica * 0.45;                // 45% de impostos
+
+    custo_consumidor = custo_fabrica + percentual_distribuidor + impostos;
+
+    printf("\n--- Detalhes do Custo ---\n");
+    printf("Custo de Fabrica: R$ %.2f\n", custo_fabrica);
+    printf("Margem do Distribuidor (28%%): R$ %.2f\n", percentual_distribuidor);
+    printf("Impostos Federais (45%%): R$ %.2f\n", impostos);
+    printf("-----------------------------------------\n");
+    printf("CUSTO AO CONSUMIDOR: R$ %.2f\n", custo_consumidor);
+
+    return 0;
+}

@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    float odom_antes, odom_depois, litros_gastos, preco_combustivel;
+    float km_rodados, km_por_litro, custo_viagem;
+
+    printf("--- Analise de Consumo e Custo de Viagem ---\n\n");
+
+    printf("Digite a quilometragem ANTES da viagem: ");
+    scanf("%f", &odom_antes);
+
+    printf("Digite a quilometragem DEPOIS da viagem: ");
+    scanf("%f", &odom_depois);
+
+    printf("Digite a quantidade de litros de combustivel gastos: ");
+    scanf("%f", &litros_gastos);
+
+    printf("Digite o preco por litro do combustivel (R$): ");
+    scanf("%f", &preco_combustivel);
+
+    km_rodados = odom_depois - odom_antes;
+    km_por_litro = km_rodados / litros_gastos;
+    custo_viagem = litros_gastos * preco_combustivel;
+
+    printf("\n--- RESULTADOS ---\n");
+    printf("a) Quilometragem rodada: %.2f km\n", km_rodados);
+    printf("b) Rendimento do veiculo: %.2f km/l\n", km_por_litro);
+    printf("c) Custo total da viagem: R$ %.2f\n", custo_viagem);
+
+    return 0;
+}

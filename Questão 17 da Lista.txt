@@ -1,0 +1,21 @@
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float c1, c2, h;
+    
+    printf("---Descobrir a Hipotenusa de um Triângulo Retângulo---\n");
+    
+    printf("Digite o primeiro cateto do Triângulo: ");
+    scanf("%f", &c1);
+    
+    printf("Digite agora o segundo cateto do Triângulo: ");
+    scanf("%f", &c2);
+    
+    h = sqrt(pow(c1,2) + pow(c2,2));
+    
+    printf("A Hipotenusa do Triângulo é : %.2f", h);
+    
+    return 0;
+}

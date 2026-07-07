@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main() {
+    float H, R;
+    int N;
+    float distancia_total = 0.0;
+    float altura_atual;
+
+    printf("--- Simulacao do Salto da Bola ---\n\n");
+
+    // Entrada de dados
+    printf("Digite a altura inicial H (em metros): ");
+    scanf("%f", &H);
+
+    printf("Digite o coeficiente de salto R (entre 0 e 1): ");
+    scanf("%f", &R);
+
+    printf("Digite o numero de saltos N: ");
+    scanf("%d", &N);
+
+    // Validação dos dados de entrada
+    if (H <= 0 || R <= 0 || R >= 1 || N < 1) {
+        printf("\nErro: Certifique-se de que H > 0, 0 < R < 1 e N >= 1.\n");
+        return 1;
+    }
+
+    // A bola cai inicialmente da altura H
+    distancia_total = H;
+    altura_atual = H;
+
+    // Loop para processar os N saltos
+    for (int i = 1; i <= N; i++) {
+        // Calcula a altura máxima alcançada no salto atual
+        altura_atual = altura_atual * R;
+
+        // Adiciona o movimento de subida e descida deste salto à distância total
+        distancia_total += (2 * altura_atual);
+    }
+
+    // Exibição dos resultados
+    printf("\n--- RESULTADOS ---\n");
+    printf("Distancia total percorrida ate o %dº salto: %.2f metros\n", N, distancia_total);
+    printf("Altura maxima atingida no %dº salto: %.2f metros\n", N, altura_atual);
+
+    return 0;
+}

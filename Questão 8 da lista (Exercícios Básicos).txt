@@ -1,0 +1,21 @@
+
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    int num1, num2, expoente1, expoente2;
+    
+    printf("Digite um número: ");
+    scanf("%d", &num1);
+    printf("Digite outro número: ");
+    scanf("%d", &num2);
+    
+    expoente1 = pow(num1, num2);
+    expoente2 = pow(num2, num1);
+    
+    printf("%d elevado a %d é %d\n", num1, num2, expoente1);
+    printf("%d elevado a %d é %d", num2, num1, expoente2);
+
+    return 0;
+}

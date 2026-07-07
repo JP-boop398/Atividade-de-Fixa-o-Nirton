@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+    float raio, volume;
+    const float PI = 3.141592;
+
+    printf("--- Calculo do Volume da Esfera ---\n\n");
+
+    printf("Digite o valor do raio da esfera: ");
+    scanf("%f", &raio);
+
+    volume = (4.0 / 3.0) * PI * (raio * raio * raio);
+
+    printf("\n--- RESULTADO ---\n");
+    printf("O volume da esfera e: %.4f\n", volume);
+
+    return 0;
+}

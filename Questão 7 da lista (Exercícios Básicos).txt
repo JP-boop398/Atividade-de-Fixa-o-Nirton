@@ -1,0 +1,16 @@
+
+#include <stdio.h>
+
+int main()
+{
+    int num, quadrado;
+    
+    printf("Digite um número: ");
+    scanf("%d", &num);
+    
+    quadrado = num*num;
+    
+    printf("O número %d elevado ao quadrado é: %d", num, quadrado);
+
+    return 0;
+}

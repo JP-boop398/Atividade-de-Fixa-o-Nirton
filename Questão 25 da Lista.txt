@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    float largura, comprimento, area_comodo;
+    float area_total = 0.0;
+    int continuar = 1;
+
+    printf("--- Calculo da Area Total da Residencia ---\n\n");
+
+    // O laço continuará rodando enquanto o usuário digitar 1
+    while (continuar == 1) {
+        printf("Digite a largura do comodo (em metros): ");
+        scanf("%f", &largura);
+        
+        printf("Digite o comprimento do comodo (em metros): ");
+        scanf("%f", &comprimento);
+
+        // Calcula a área do cômodo atual e acumula no total
+        area_comodo = largura * comprimento;
+        area_total += area_comodo;
+
+        printf("Area deste comodo: %.2f m²\n", area_comodo);
+
+        // Pergunta se deseja adicionar mais cômodos
+        printf("\nDeseja inserir outro comodo? (1 - SIM, 0 - NAO): ");
+        scanf("%d", &continuar);
+        printf("\n");
+    }
+
+    // Exibe o resultado final quando o usuário decide parar (digita 0)
+    printf("-----------------------------------------\n");
+    printf("AREA TOTAL DA RESIDENCIA: %.2f m²\n", area_total);
+    printf("-----------------------------------------\n");
+
+    return 0;
+}

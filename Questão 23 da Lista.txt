@@ -1,0 +1,73 @@
+#include <stdio.h>
+
+int main() {
+    float altura;
+    int sexo;
+
+    // Variáveis para os resultados
+    float maior_altura = -1.0, menor_altura = 99.0;
+    int homens = 0;
+    float soma_altura_mulheres = 0.0;
+    int total_mulheres = 0;
+    int mulheres_baixas = 0;
+    int total_pessoas = 0;
+
+    printf("--- Analise de Dados do Grupo ---\n\n");
+
+    while (1) {
+        printf("Digite a altura (ou 0 para encerrar): ");
+        scanf("%f", &altura);
+
+        // Condição de parada
+        if (altura <= 0) {
+            break;
+        }
+
+        printf("Digite o sexo (1 - Masculino, 2 - Feminino): ");
+        scanf("%d", &sexo);
+
+        // a) Controle da maior e menor altura
+        if (altura > maior_altura) {
+            maior_altura = altura;
+        }
+        if (altura < menor_altura) {
+            menor_altura = altura;
+        }
+
+        // b), c) e d) Classificação por sexo
+        if (sexo == 1) {
+            homens++;
+        } else if (sexo == 2) {
+            total_mulheres++;
+            soma_altura_mulheres += altura;
+            
+            if (altura < 1.68) {
+                mulheres_baixas++;
+            }
+        }
+        
+        total_pessoas++;
+    }
+
+    // Exibição dos resultados com proteções contra divisões por zero
+    if (total_pessoas > 0) {
+        printf("\n--- RESULTADOS ---\n");
+        printf("a) Maior altura: %.2fm | Menor altura: %.2fm\n", maior_altura, menor_altura);
+        printf("b) Numero de homens: %d\n", homens);
+
+        if (total_mulheres > 0) {
+            float media_mulheres = soma_altura_mulheres / total_mulheres;
+            float perc_mulheres = ((float)mulheres_baixas / total_mulheres) * 100;
+            
+            printf("c) Media de altura das mulheres: %.2fm\n", media_mulheres);
+            printf("d) Percentual de mulheres abaixo de 1.68m: %.2f%%\n", perc_mulheres);
+        } else {
+            printf("c) Nenhuma mulher foi registrada.\n");
+            printf("d) Nenhuma mulher foi registrada.\n");
+        }
+    } else {
+        printf("\nNenhum dado valido foi inserido.\n");
+    }
+
+    return 0;
+}

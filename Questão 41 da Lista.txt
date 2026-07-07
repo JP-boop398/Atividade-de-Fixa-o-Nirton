@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main() {
+    int numero_vendedor, carros_vendidos;
+    char nome_vendedor[100];
+    float valor_total_vendas, salario_fixo, valor_por_carro;
+    float comissao_total_fixa, comissao_percentual, salario_mensal_total;
+
+    printf("--- Calculo de Salario e Comissoes (Revendedora) ---\n\n");
+
+    printf("Digite o numero do vendedor: ");
+    scanf("%d", &numero_vendedor);
+
+    printf("Digite o nome do vendedor: ");
+    scanf(" %[^\n]s", nome_vendedor); // Lê o nome completo com espaços
+
+    printf("Digite o numero de carros vendidos: ");
+    scanf("%d", &carros_vendidos);
+
+    printf("Digite o valor total de suas vendas (R$): ");
+    scanf("%f", &valor_total_vendas);
+
+    printf("Digite o salario fixo mensal (R$): ");
+    scanf("%f", &salario_fixo);
+
+    printf("Digite o valor recebido por cada carro vendido (R$): ");
+    scanf("%f", &valor_por_carro);
+
+    comissao_total_fixa = carros_vendidos * valor_por_carro;
+    comissao_percentual = valor_total_vendas * 0.05; // 5% do valor das vendas
+    
+    salario_mensal_total = salario_fixo + comissao_total_fixa + comissao_percentual;
+
+    printf("\n=========================================\n");
+    printf("Codigo do Vendedor: %d\n", numero_vendedor);
+    printf("Nome do Vendedor: %s\n", nome_vendedor);
+    printf("-----------------------------------------\n");
+    printf("Salario Fixo: R$ %.2f\n", salario_fixo);
+    printf("Comissao Fixa por Carros (%d vendidos): R$ %.2f\n", carros_vendidos, comissao_total_fixa);
+    printf("Comissao de 5%% sobre Vendas: R$ %.2f\n", comissao_percentual);
+    printf("-----------------------------------------\n");
+    printf("SALARIO TOTAL MENSAL: R$ %.2f\n", salario_mensal_total);
+    printf("=========================================\n");
+
+    return 0;
+}

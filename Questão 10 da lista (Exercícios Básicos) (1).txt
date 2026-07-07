@@ -1,0 +1,18 @@
+
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    int num1, num2, quociente;
+    
+    printf("Digite um número: ");
+    scanf("%d", &num1);
+    printf("Digite outro número: ");
+    scanf("%d", &num2);
+    
+    quociente = num1 / num2;
+    
+    printf("O quociente da divisão inteira do número %d com o número %d é: %d", num1, num2, quociente);
+    return 0;
+}

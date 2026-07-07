@@ -1,0 +1,15 @@
+
+#include <stdio.h>
+
+int main()
+{
+    int num1, sucessor;
+    
+    printf("Digite um número: ");
+    scanf("%d", &num1);
+    
+    sucessor = num1 + 1;
+    printf("O sucessor do número que você digitou é: %d", sucessor);
+
+    return 0;
+}

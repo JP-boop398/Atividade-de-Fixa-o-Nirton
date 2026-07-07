@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main() {
+    int linhas, colunas;
+
+    printf("--- Desenho de Retangulo (* ) ---\n\n");
+
+    printf("Digite a quantidade de linhas (1 a 20): ");
+    scanf("%d", &linhas);
+
+    printf("Digite a quantidade de colunas (1 a 20): ");
+    scanf("%d", &colunas);
+
+    if (linhas < 1) {
+        linhas = 1;
+    } else if (linhas > 20) {
+        linhas = 20;
+    }
+
+    if (colunas < 1) {
+        colunas = 1;
+    } else if (colunas > 20) {
+        colunas = 20;
+    }
+
+    printf("\nRetangulo gerado (%dx%d):\n\n", linhas, colunas);
+
+    for (int i = 0; i < linhas; i++) {
+        // Laço interno controla as colunas
+        for (int j = 0; j < colunas; j++) {
+            printf("* ");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}

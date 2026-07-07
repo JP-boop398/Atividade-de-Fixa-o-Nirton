@@ -1,0 +1,51 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+void main()
+{
+    double nota1, nota2, nota3, nota4, nota5, media;
+
+    do{
+        system("clear");
+        printf("Digite a primeira nota: ");
+        scanf("%lf",&nota1);
+    }while((nota1 < 0) || (nota1 > 10));
+
+    do{
+        printf("Digite a segunda nota: ");
+        scanf("%lf",&nota2);
+    }while((nota2 < 0) || (nota2 > 10));
+
+    do{
+        printf("Digite a terceira nota: ");
+        scanf("%lf",&nota3);
+    }while((nota3 < 0) || (nota3 > 10));
+
+    do{
+        system("clear");
+        printf("Digite a quarta nota: ");
+        scanf("%lf",&nota4);
+    }while((nota4 < 0) || (nota4 > 10));
+
+    do{
+        system("clear");
+        printf("Digite a quinta e última nota: ");
+        scanf("%lf",&nota5);
+    }while((nota5 < 0) || (nota5 > 10));
+    
+    
+    media=(nota1 + nota2 + nota3 + nota4 + nota5)/5;
+
+
+    printf("Sua media é: %.2lf \n",media);
+
+    if (media>=6){
+        printf("Você está aprovado");
+    }else if(media>=4){
+        printf("Você vai para a prova de recuperação");
+    }else{
+        printf("Você está reprovado");
+    }
+}

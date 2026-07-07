@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    // Declaração das variáveis
+    float numero;
+    int negativos = 0;
+    int positivos = 0;
+    int zeros = 0;
+
+    // Laço de repetição para ler 5 números
+    for (int i = 1; i <= 5; i++) {
+        printf("Digite o %dº número: ", i);
+        scanf("%f", &numero);
+
+        // Estrutura condicional para classificação
+        if (numero < 0) {
+            negativos++;
+        } else if (numero > 0) {
+            positivos++;
+        } else {
+            zeros++;
+        }
+    }
+
+    // Exibição dos resultados na tela
+    printf("\n--- RESULTADOS ---\n");
+    printf("Quantidade de números negativos: %d\n", negativos);
+    printf("Quantidade de números positivos: %d\n", positivos);
+    printf("Quantidade de números zero: %d\n", zeros);
+
+    return 0;
+}

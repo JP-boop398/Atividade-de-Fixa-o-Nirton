@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <math.h> // Necessária para as funções sqrt() e pow()
+
+int main() {
+    float x1, y1, x2, y2;
+    float distancia;
+
+    printf("--- Calculo da Distancia Euclidiana ---\n\n");
+
+    printf("Digite as coordenadas do ponto 1 (X1 Y1) separados por espaco: ");
+    scanf("%f %f", &x1, &y1);
+
+    printf("Digite as coordenadas do ponto 2 (X2 Y2) separados por espaco: ");
+    scanf("%f %f", &x2, &y2);
+
+    distancia = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+
+    printf("\n--- RESULTADO ---\n");
+    printf("A distancia euclidiana entre os pontos e: %.4f\n", distancia);
+
+    return 0;
+}
